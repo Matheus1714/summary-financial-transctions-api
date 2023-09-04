@@ -3,8 +3,8 @@ import { StatusCodes } from 'http-status-codes'
 
 const statusRoute = Router()
 
-statusRoute.get('/status', (req: Request, res: Response, next:NextFunction) => {
-    res.sendStatus(StatusCodes.OK)
+statusRoute.get('/', (req: Request, res: Response, next:NextFunction) => {
+    res.json({'message': StatusCodes.OK})
 })
 
 export default statusRoute
