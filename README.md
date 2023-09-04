@@ -39,12 +39,34 @@ The main technologies for the front-end are:
 The main dependencies used are:
 
 ```json
-
+"devDependencies": {
+   "@types/express": "^4.17.17",
+   "@types/http-status-codes": "^1.2.0",
+   "@types/node": "^20.4.8",
+   "@types/pg": "^8.10.2",
+   "nodemon": "^3.0.1",
+   "pre-commit": "^1.2.2",
+   "rimraf": "^5.0.1",
+   "ts-node": "^10.9.1",
+   "ts-node-dev": "^2.0.0",
+   "typescript": "^5.1.6"
+},
+"dependencies": {
+   "dotenv": "^16.3.1",
+   "express": "^4.18.2",
+   "http-status-codes": "^2.2.0",
+   "pg": "^8.11.2"
+}
 ```
 
 ## Features 🚀
 
+All features are for 1 year of financial transactions.
 
+* [ ] `GET` spending (%) by category
+* [ ] `GET` spending (%) by month
+* [ ] `GET` number of transactions
+* [ ] `GET` visited locations by region
 
 ## Run Project 🏃
 
