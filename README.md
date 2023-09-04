@@ -7,7 +7,7 @@
 
 This is the back-end solution for the Hyperplane selection process interview.
 
-his project is the backend that will communicate with the frontend present in the repository [Summary Financial Transctions APP](https://github.com/Matheus1714/summary-financial-transctions-app)
+This project is the backend that will communicate with the frontend present in the repository [Summary Financial Transctions APP](https://github.com/Matheus1714/summary-financial-transctions-app)
 
 ## Table of Content 📜
 <!--ts-->
