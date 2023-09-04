@@ -1,6 +1,6 @@
 ﻿# Summary Financial Transctions API 📊
 
-![GitHub](https://img.shields.io/github/license/Matheus1714/summary-financial-transctions-api)
+![GitHub](https://img.shields.io/github/license/matheus1714/summary-financial-transctions-api)
 ![GitHub deployments](https://img.shields.io/github/deployments/matheus1714/summary-financial-transctions-api/production)
 
 ## About ℹ️
