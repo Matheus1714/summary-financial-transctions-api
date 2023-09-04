@@ -1,13 +1,13 @@
 import express from 'express'
 // import statusRoute from './routes/status.route'
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 import { NextFunction, Request, Response } from 'express'
 
 const app = express()
-dotenv.config()
+// dotenv.config()
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+// app.use(express.json())
+// app.use(express.urlencoded({ extended: true }))
 
 // app.use(statusRoute)
 
