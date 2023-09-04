@@ -1,10 +1,10 @@
-import { NextFunction, Request, Response, Router } from 'express'
-import { StatusCodes } from 'http-status-codes'
+import { NextFunction, Request, Response, Router } from "express";
+import { StatusCodes } from "http-status-codes";
 
-const statusRoute = Router()
+const statusRoute = Router();
 
-statusRoute.get('/', (req: Request, res: Response, next:NextFunction) => {
-    res.json({'status': StatusCodes.OK})
-})
+statusRoute.get("/", (req: Request, res: Response, next: NextFunction) => {
+  res.json({ status: StatusCodes.OK });
+});
 
-export default statusRoute
+export default statusRoute;
