@@ -1,16 +1,15 @@
-import express from 'express'
-import statusRoute from './routes/status.route'
-import dotenv from 'dotenv'
-import { NextFunction, Request, Response } from 'express'
+import dotenv from "dotenv";
+import express from "express";
+import statusRoute from "./routes/status.route";
 
-const app = express()
-dotenv.config()
+const app = express();
+dotenv.config();
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use(statusRoute)
+app.use(statusRoute);
 
-const port = process.env.PORT || 3333
+const port = process.env.PORT || 3333;
 
-app.listen(port, () => console.log(`Server running on port ${port}`))
+app.listen(port, () => console.log(`Server running on port ${port}`));
