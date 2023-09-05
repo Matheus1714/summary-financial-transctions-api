@@ -26,7 +26,8 @@ Backend DEMO application can be accessed using [Back-end DEMO](https://www.postm
 
 You can also access the `BASE_URL`=[https://summary-financial-transctions-api.vercel.app/](https://summary-financial-transctions-api.vercel.app/).
 
-![image](https://github.com/Matheus1714/summary-financial-transctions-api/assets/39354089/7ffeb52c-b59a-4503-a48b-fe0629dc9167)
+![image](https://github.com/Matheus1714/summary-financial-transctions-api/assets/39354089/262fbbff-8769-4c85-86aa-b774a7163b66)
+
 
 ## Technologies ⚙️
 
@@ -87,6 +88,16 @@ Before running the project, install the dependencies:
 
 ```shell
 npm i
+```
+
+Set the environment variables:
+
+Clone the `.env.example` file and make it an `.env`.
+
+There is a configurable database present in the repository[Repo financial-data-storage](https://github.com/Matheus1714/financial-data-storage)
+
+```env
+PG_CONNECTION_STRING=postgres://postgres:postgres@localhost:2222/finantialdb
 ```
 
 To run the project, run the command:
