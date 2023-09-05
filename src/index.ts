@@ -1,12 +1,14 @@
+import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import accountsRoute from "./routes/accounts.route";
 import statusRoute from "./routes/status.route";
 import transactionsRoute from "./routes/transactions.route";
-import accountsRoute from "./routes/accounts.route";
 
 const app = express();
 dotenv.config();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
