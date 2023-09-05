@@ -63,9 +63,9 @@ The main dependencies used are:
 
 All features are for 1 year of financial transactions.
 
-* [ ] `GET` spending (%) by category
-* [ ] `GET` spending (%) by month
-* [ ] `GET` number of transactions
+* [X] `GET` spending (%) by category
+* [X] `GET` spending (%) by month
+* [X] `GET` number of transactions
 * [ ] `GET` visited locations by region
 
 ## Run Project 🏃
