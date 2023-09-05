@@ -40,22 +40,35 @@ The main dependencies used are:
 
 ```json
 "devDependencies": {
+   "@rocketseat/eslint-config": "^2.1.0",
+   "@types/cors": "^2.8.14",
    "@types/express": "^4.17.17",
    "@types/http-status-codes": "^1.2.0",
    "@types/node": "^20.4.8",
    "@types/pg": "^8.10.2",
-   "nodemon": "^3.0.1",
+   "@types/uuid": "^9.0.3",
+   "@typescript-eslint/eslint-plugin": "^6.6.0",
+   "eslint": "^8.48.0",
+   "eslint-config-standard-with-typescript": "^39.0.0",
+   "eslint-plugin-import": "^2.28.1",
+   "eslint-plugin-n": "^16.0.2",
+   "eslint-plugin-prettier": "^5.0.0",
+   "eslint-plugin-promise": "^6.1.1",
    "pre-commit": "^1.2.2",
+   "prettier": "3.0.3",
    "rimraf": "^5.0.1",
    "ts-node": "^10.9.1",
    "ts-node-dev": "^2.0.0",
-   "typescript": "^5.1.6"
+   "typescript": "^5.2.2"
 },
 "dependencies": {
+   "cors": "^2.8.5",
    "dotenv": "^16.3.1",
    "express": "^4.18.2",
    "http-status-codes": "^2.2.0",
-   "pg": "^8.11.2"
+   "nodemon": "^3.0.1",
+   "pg": "^8.11.2",
+   "uuid": "^9.0.0"
 }
 ```
 
