@@ -5,28 +5,14 @@ import transacrionsRepository from "../repositories/transacrions.repository";
 const transactionsRoute = Router();
 
 transactionsRoute.get(
-  "/transactions",
-  async (req: Request, res: Response, next: NextFunction) => {
+  "/transactions/:accountId/:year",
+  async (
+    req: Request<{ accountId: string; year: string }>,
+    res: Response,
+    next: NextFunction,
+  ) => {
     try {
-      const { accountId } = req.body;
-      const transactions =
-        await transacrionsRepository.getAllransactions(accountId);
-      return res.status(StatusCodes.OK).send({ error: 0, transactions });
-    } catch (error) {
-      next(error);
-      return res
-        .status(StatusCodes.BAD_REQUEST)
-        .send({ error: 1, msg: String(error) });
-    }
-  },
-);
-
-transactionsRoute.get(
-  "/transactions/:year",
-  async (req: Request<{ year: string }>, res: Response, next: NextFunction) => {
-    try {
-      const { year } = req.params;
-      const { accountId } = req.body;
+      const { accountId, year } = req.params;
       const transactions = await transacrionsRepository.getTransactionsByYear(
         accountId,
         year,
@@ -42,31 +28,14 @@ transactionsRoute.get(
 );
 
 transactionsRoute.get(
-  "/transactions/:year",
-  async (req: Request<{ year: string }>, res: Response, next: NextFunction) => {
+  "/transactions/quantity/:accountId/:year",
+  async (
+    req: Request<{ accountId: string; year: string }>,
+    res: Response,
+    next: NextFunction,
+  ) => {
     try {
-      const { year } = req.params;
-      const { accountId } = req.body;
-      const transactions = await transacrionsRepository.getTransactionsByYear(
-        accountId,
-        year,
-      );
-      return res.status(StatusCodes.OK).send({ error: 0, transactions });
-    } catch (error) {
-      next(error);
-      return res
-        .status(StatusCodes.BAD_REQUEST)
-        .send({ error: 1, msg: String(error) });
-    }
-  },
-);
-
-transactionsRoute.get(
-  "/transactions/quantity/:year",
-  async (req: Request<{ year: string }>, res: Response, next: NextFunction) => {
-    try {
-      const { year } = req.params;
-      const { accountId } = req.body;
+      const { accountId, year } = req.params;
       const quantityOfTransactionsInYear =
         await transacrionsRepository.getTransactionsQuantityInYear(
           accountId,
@@ -85,11 +54,14 @@ transactionsRoute.get(
 );
 
 transactionsRoute.get(
-  "/transactions/month/:year",
-  async (req: Request<{ year: string }>, res: Response, next: NextFunction) => {
+  "/transactions/month/:accountId/:year",
+  async (
+    req: Request<{ accountId: string; year: string }>,
+    res: Response,
+    next: NextFunction,
+  ) => {
     try {
-      const { year } = req.params;
-      const { accountId } = req.body;
+      const { accountId, year } = req.params;
       const quantityTransactionsByMonthInYear =
         await transacrionsRepository.getTransactionsByMonthInYear(
           accountId,
@@ -108,19 +80,22 @@ transactionsRoute.get(
 );
 
 transactionsRoute.get(
-  "/transactions/category/:year",
-  async (req: Request<{ year: string }>, res: Response, next: NextFunction) => {
+  "/transactions/category/:accountId/:year",
+  async (
+    req: Request<{ accountId: string; year: string }>,
+    res: Response,
+    next: NextFunction,
+  ) => {
     try {
-      const { year } = req.params;
-      const { accountId } = req.body;
-      const quantityTransactionsByCategoryInYear =
+      const { accountId, year } = req.params;
+      const transactionsByCategoryInYear =
         await transacrionsRepository.getTransactionsByCategoryInYear(
           accountId,
           year,
         );
       return res
         .status(StatusCodes.OK)
-        .send({ error: 0, quantityTransactionsByCategoryInYear });
+        .send({ error: 0, transactionsByCategoryInYear });
     } catch (error) {
       next(error);
       return res
