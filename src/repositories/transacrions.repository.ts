@@ -85,7 +85,7 @@ class TransactionsRepository {
         SELECT
           TO_CHAR(mc.month, 'MM') AS month,
           mc.transaction_count,
-          (mc.transaction_count::DECIMAL / tc.total_transactions * 100)::DECIMAL(5, 2) AS percent
+          (mc.transaction_count::DECIMAL / tc.total_transactions)::DECIMAL(5, 2) AS percent
         FROM monthly_counts mc
         CROSS JOIN total_count tc
         ORDER BY mc.month;
@@ -107,7 +107,7 @@ class TransactionsRepository {
       const query = `
       SELECT
         t1.transaction_type,
-        (t1.transaction_count * 100.0 / t2.total_transactions) AS percentage
+        (t1.transaction_count::DECIMAL / t2.total_transactions)::DECIMAL(5, 2) AS percentage
         FROM (
             SELECT
                 transaction_type,
@@ -124,6 +124,7 @@ class TransactionsRepository {
                 COUNT(*) AS total_transactions
             FROM transactions
             WHERE DATE_PART('year', created_at) = $2
+            AND account_id = $1
             GROUP BY transaction_year
         ) AS t2
         ON t1.transaction_year = t2.transaction_year
